@@ -1,0 +1,18 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	robots: string;
+}
+
+const { title, description, robots } = Astro.props;
+---
+<BaseHead title={title} description={description} robots={robots} />
+	<body>
+	<Header />
+		<slot />
+	</body>
+</html>

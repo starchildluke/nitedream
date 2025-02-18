@@ -1,0 +1,19 @@
+---
+import Logo from '../components/Logo.astro';
+import site from '../data/site.json';
+---
+
+
+<header>
+        <nav>
+        		<Logo />
+          <h2 class="header__h2">{site.description}</h2>
+            <ul>
+              <li><a href="/">home</a></li>
+              <li><a href="/about/">about</a></li>
+              <li><a href="/blog/">blog</a></li>
+              <li><a href="/contact/">contact</a></li>
+              <li><a href="/projects/">projects</a></li>
+            </ul>
+        </nav>
+    </header>

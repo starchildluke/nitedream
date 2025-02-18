@@ -1,0 +1,41 @@
+---
+
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro'; 
+import ProjectsBreadcrumbs from '../../components/ProjectsBreadcrumbs.astro'; 
+import site from '../../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'More about Cultrface';
+let description = 'Cultrface project page';
+
+---
+<Layout title={`${title} | ${site.title}`} description={description}>
+      <main class="container">
+        <article class="content">
+              <ProjectsBreadcrumbs title="Cultrface"/>
+              <h1>Cultrface</h1>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><span class="table-cells"><strong>Date established</strong></span></td>
+                      <td>2015</td>
+                    </tr>
+                    <tr>
+                      <td><span class="table-cells"><strong>Link</strong></span></td>
+                      <td><a href="https://cultrface.co.uk/">cultrface.co.uk</a></td>
+                    </tr>
+                    <tr>
+                      <td><span class="table-cells"><strong>Made with</strong></span></td>
+                      <td><a href="https://wordpress.org/">WordPress</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h2>Description</h2>
+                <p>Cultrface is a blog about culture.</p>
+                <p>You can <a href="https://twitter.com/cultrface">follow Cultrface on Twitter</a>.</p>
+            </article>
+          </main>
+</Layout>

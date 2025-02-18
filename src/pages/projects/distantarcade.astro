@@ -1,0 +1,41 @@
+---
+
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro'; 
+import ProjectsBreadcrumbs from '../../components/ProjectsBreadcrumbs.astro'; 
+import site from '../../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'More about Distant Arcade';
+let description = 'Distant Arcade project page';
+
+---
+<Layout title={`${title} | ${site.title}`} description={description}>
+      <main class="container">
+        <article class="content">
+              <ProjectsBreadcrumbs title="Distant Arcade"/>
+              <h1>Distant Arcade</h1>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><span class="table-cells"><strong>Date established</strong></span></td>
+                      <td>2014</td>
+                    </tr>
+                    <tr>
+                      <td><span class="table-cells"><strong>Link</strong></span></td>
+                      <td><a href="https://distantarcade.co.uk/">distantarcade.co.uk</a></td>
+                    </tr>
+                    <tr>
+                      <td><span class="table-cells"><strong>Made with</strong></span></td>
+                      <td><a href="https://wordpress.org/">WordPress</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h2>Description</h2>
+                <p>Distant Arcade is a blog about gaming.</p>
+                <p>You can <a href="https://twitter.com/cultrface">follow Distant Arcade on Twitter</a>.</p>
+            </article>
+          </main>
+</Layout>

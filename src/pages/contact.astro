@@ -1,0 +1,23 @@
+---
+// COMPONENTS
+
+import Layout from '../components/Layout.astro';
+import site from '../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'Contact';
+let description = 'Find out how to contact NiTEDREAM.';
+---
+
+<Layout title={`${title} | ${site.title}`} description={description}>
+  <main class="container">
+        <article class="content">
+        <h1>{title}</h1>
+      <section>
+        <p>Email: <a href="mailto:info@nitedre.am">info at nitedre dot am</a></p>
+        <p>Bluesky: <a href="https://bsky.app/profile/nitedre.am">@nitedre.am</a></p>
+    </section>
+      </article>
+    </main>
+</Layout>

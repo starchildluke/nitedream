@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// COMPONENTS
+import Layout from '../components/Layout.astro';
+import site from '../data/site.json';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// METADATA VARIABLES
+
+let metaTitle = `${site.title} — ${site.description}`;
+let title = site.title;
+let description = 'NiTEDREAM (formerly Pandog Media) is a collection of creative media projects that focuses on Black digital cultures.';
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+    <Layout metaTitle={metaTitle} title={metaTitle} description={description}>
+    <main class="container">
+      <article class="content">
+        <picture class="img--sharpen home__img">
+           <source media="(min-width: 1200px)" srcset="/images/hercules-greyscale-blue.gif">
+           <source media="(max-width: 768px)" srcset="/images/hercules-greyscale-blue-500.gif">
+           <img src="/images/hercules-greyscale-blue.gif" alt="a pixelated image of a galaxy" width="1200" loading="eager">
+          </picture> 
+        <p>{description}</p>
+      </article>
+    </main>
+      </Layout>

@@ -1,0 +1,41 @@
+---
+
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro'; 
+import ProjectsBreadcrumbs from '../../components/ProjectsBreadcrumbs.astro'; 
+import site from '../../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'More about LOGiCFACE';
+let description = 'LOGiCFACE project page';
+
+---
+<Layout title={`${title} | ${site.title}`} description={description}>
+      <main class="container">
+      <article class="content">
+        <ProjectsBreadcrumbs title="LOGiCFACE"/>
+        <h1>LOGiCFACE</h1>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="table-cells"><strong>Date established</strong></span></td>
+                <td>2015</td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Link</strong></span></td>
+                <td><a href="https://logicface.co.uk/">logicface.co.uk</a></td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Made with</strong></span></td>
+                <td><a href="https://wordpress.org/">WordPress</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Description</h2>
+          <p>LOGiCFACE is a blog about science, tech, engineering, and mathematics (better known as STEM).</p>
+          <p>You can <a href="https://twitter.com/logcface">follow LOGiCFACE on Twitter.</a></p>
+      </article>
+    </main>
+</Layout>

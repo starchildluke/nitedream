@@ -1,0 +1,42 @@
+---
+
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro'; 
+import ProjectsBreadcrumbs from '../../components/ProjectsBreadcrumbs.astro'; 
+import site from '../../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'More about Playrface';
+let description = 'Playrface project page';
+
+---
+<Layout title={`${title} | ${site.title}`} description={description}>
+  <main class="container">
+      <article class="content">
+        <ProjectsBreadcrumbs title="Playrface"/>
+        <h1>Playrface</h1>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="table-cells"><strong>Date established</strong></span></td>
+                <td>2017</td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Link</strong></span></td>
+                <td><a href="https://playrface.co.uk/">playrface.co.uk</a></td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Made with</strong></span></td>
+                <td><a href="https://wordpress.org/">WordPress</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Description</h2>
+          <p>Playrface is a blog about sports.</p>
+          <p>You can <a href="https://twitter.com/playrface">follow Playrface on Twitter.</a></p>
+      </article>
+    </Layout>
+  </main>
+</Layout>

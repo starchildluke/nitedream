@@ -1,0 +1,23 @@
+---
+// COMPONENTS
+import Layout from '../components/Layout.astro';
+import site from '../data/site.json';
+
+// METADATA VARIABLES
+let title = `About ${site.title}`;
+let description = 'NiTEDREAM (formerly Pandog Media) is a collection of creative media projects by Luke Davis (me) that focuses on Black digital cultures and my personal experiences within them.';
+---
+
+<Layout metaTitle={title} title={title} description={description}>
+<main class="container">
+  <article class="content">
+    <p>{description}</p>
+    <p>The collection comprises of blogs and music projects on multiple platforms, covering a wide range of topics including music, culture, STEM (science, technology, engineering, and mathematics), sports, and gaming.</p>
+    <p>There’s practically nothing I won’t cover as long as it’s cool.</p>
+    <h2 class="about__h2">About me</h2>
+    <p>My name Luke and I am a technical SEO and Black creative who loves everything Web-related. Having discovered the Web in 2000, I have embarked on an incredible journey that lead me into digital marketing (professionally) in 2019. I have a degree in Music Technology and have been creating music under the name Starchildluke (previously Starchild and st/rr) since 2011.
+    </p>
+    <p>In my spare time, I watch YouTube, cry at the cuteness of hippos, and send friends Simpsons and Black memes.</p>
+  </article>
+</main>
+</Layout>

@@ -1,0 +1,41 @@
+---
+
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro'; 
+import ProjectsBreadcrumbs from '../../components/ProjectsBreadcrumbs.astro'; 
+import site from '../../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'More about Sampleface';
+let description = 'Sampleface project page';
+
+---
+<Layout title={`${title} | ${site.title}`} description={description}>
+  <main class="container">
+      <article class="content">
+        <ProjectsBreadcrumbs title="Sampleface"/>
+        <h1>Sampleface</h1>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="table-cells"><strong>Date established</strong></span></td>
+                <td>2012</td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Link</strong></span></td>
+                <td><a href="https://sampleface.co.uk/">sampleface.co.uk</a></td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Made with</strong></span></td>
+                <td><a href="https://wordpress.org/">WordPress</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Description</h2>
+          <p>Sampleface is a blog about music and sampling. I started it with a friend who coined the phrase and the rest is history.</p>
+          <p>You can <a href="https://twitter.com/sampleface">follow Sampleface on Twitter.</a></p>
+</article>
+</main>
+</Layout>

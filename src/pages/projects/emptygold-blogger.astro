@@ -1,0 +1,40 @@
+---
+
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro'; 
+import ProjectsBreadcrumbs from '../../components/ProjectsBreadcrumbs.astro'; 
+import site from '../../data/site.json';
+
+// METADATA VARIABLES
+
+let title = 'More about Emptygold Blogger';
+let description = 'Emptygold Blogger project page';
+
+---
+<Layout title={`${title} | ${site.title}`} description={description}>
+  <main class="container">
+      <article class="content">
+        <ProjectsBreadcrumbs title="Emptygold Blogger"/>
+        <h1>Emptygold Blogger</h1>
+          <table>
+            <tbody>
+              <tr>
+                <td><span class="table-cells"><strong>Date established</strong></span></td>
+                <td>2023</td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Link</strong></span></td>
+                <td><a href="https://emptygold.blog/">emptygold.blog</a></td>
+              </tr>
+              <tr>
+                <td><span class="table-cells"><strong>Made with</strong></span></td>
+                <td><a href="https://wordpress.org/">WordPress</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Description</h2>
+          <p>Emptygold Blogger is a Tumblr-style personal blog. <a href="https://lukealexdavis.co.uk/posts/emptygold-blogger/">Read more about how I started it on this blog post.</a></p>
+      </article>
+    </main>
+</Layout>

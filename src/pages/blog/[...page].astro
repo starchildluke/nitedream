@@ -1,0 +1,88 @@
+---
+// COMPONENTS
+
+import Layout from '../../components/Layout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths({paginate}) {
+  const allPosts = await getCollection('blog');
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+  return paginate(sortedPosts, { pageSize: 25 });
+}
+
+const { page } = Astro.props
+
+function postsByYear(posts: Post[]) {
+  interface PostsByYearData {
+    year: number
+    items: Post[]
+  }
+
+  const postsByYearMap = posts.reduce(function(acc, post) {
+    const year = new Date(post.data.pubDate).getFullYear()
+    const existing = acc.get(year)?.items || []
+    acc.set(year, {
+      year,
+      items: existing.concat(post)
+    })
+    return acc;
+  }, new Map<number, PostsByYearData>())
+
+  return [...postsByYearMap.values()]
+    .sort((a, b) => b.year - a.year);
+}
+
+const postGroups = postsByYear(page.data)
+
+let fullTitle = page.url.prev ? `Posts ? (Page ${page.currentPage}/${page.lastPage})` : 'Posts';
+let description = "The blog listings page.";
+---
+
+<style>
+  
+.h2-year {
+  margin-bottom: 1rem;
+}
+
+.post-listing a {
+  font-size: var(--font-size-md);
+}
+
+</style>
+
+
+<Layout title={fullTitle} description={description}>
+  <main class="container">
+    <article class="content">
+      <section class="intro">
+          <h1>{fullTitle}</h1>
+          <p>Welcome to my blog.</p>
+          <p>This blog is mainly for project updates or opinions on Black digital media.</p>
+          <p>You can follow the blog via the <a href="/blog.xml">RSS feed</a> wherever you get your RSS feeds... read?</p>
+        </section>
+        <section>
+          {postGroups.map(({ year, items }) => (
+          <h2 class="h2-year">{year}</h2>
+          <ul class="post-list">
+            {items.map((post) => (
+            <li class="post-listing">
+              <a href={`/blog/${post.slug}/`}><Fragment set:html={post.data.title}/></a>
+              <p class="publish-date"><FormattedDate date={post.data.pubDate} /></p>
+            </li>
+            ))}
+          </ul>
+          ))}
+        </section>
+        <section class="page-links">
+          {page.url.prev && (
+          <a class='prev' href={page.url.prev || '#'}>&laquo; Prev</a>
+          )}
+          {page.url.prev && page.url.next && ""}
+          {page.url.next && (
+          <a class='Next' href={page.url.next || '#'}>Next &raquo;</a>
+          )}
+        </section>
+      </article>
+  </main>
+  </Layout>

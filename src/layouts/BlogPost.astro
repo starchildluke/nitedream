@@ -1,0 +1,30 @@
+---
+import Markdown from '@astrojs/markdown-component';
+import BaseHead from '../components/BaseHead.astro';
+import BlogHeader from '../components/BlogHeader.astro';
+import BlogPost from '../components/BlogPost.astro';
+import StructuredData from '../components/StructuredData.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+
+const {content} = Astro.props;
+const {title, description, date, canonicalURL, tags, relatedposts} = content;
+
+---
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {canonicalURL} />
+    <StructuredData {title} {date} />
+  </head>
+
+  <body>
+    <BlogHeader />
+    <BlogPost {title} {date}>
+      <slot />
+      <div class="tagged-as">Tagged as:</div>
+      <Markdown>
+        {tags.map(tag => <span class="tags">{tag} </span>)}
+      </Markdown>
+      <RelatedPosts />
+    </BlogPost>
+  </body>
+</html>
