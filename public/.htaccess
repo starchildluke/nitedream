@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE] 
+
+# BEGIN Expire headers  
+<IfModule mod_expires.c>  
+  # Turn on the module.
+  ExpiresActive on
+  # Set the default expiry times.
+  ExpiresDefault "access plus 3 months"
+  ExpiresByType image/jpg "access plus 3 months"
+  ExpiresByType image/svg+xml "access 3 months"
+  ExpiresByType image/gif "access plus 3 months"
+  ExpiresByType image/jpeg "access plus 3 months"
+  ExpiresByType image/png "access plus 3 months"
+  ExpiresByType text/css "access plus 3 months"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/ico "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType text/html "access plus 600 seconds"
+
+</IfModule>  
+# END Expire headers
