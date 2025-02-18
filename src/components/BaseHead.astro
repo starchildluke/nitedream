@@ -4,11 +4,11 @@ import site from '../data/site.json';
 const {
   title,
   description,
-  image = site.url,
-  canonicalURL = Astro.url
+  image = `${site.url}/images/nitedream-og-image.jpg`,
+  canonicalURL = `${site.url}${Astro.url.pathname}`
 } = Astro.props;
 
-const blogRssFeed = `${site.url}blog.xml`;
+const blogRssFeed = `${site.url}/blog.xml`;
 
 ---
 <html lang="en-GB">

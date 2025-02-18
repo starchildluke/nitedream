@@ -5,12 +5,13 @@ import Header from '../components/Header.astro';
 interface Props {
 	title: string;
 	description: string;
+	canonicalURL: string | URL;
 	robots: string;
 }
 
-const { title, description, robots } = Astro.props;
+const { title, description, robots, canonicalURL } = Astro.props;
 ---
-<BaseHead title={title} description={description} robots={robots} />
+<BaseHead title={title} description={description} robots={robots} canonicalURL={canonicalURL} />
 	<body>
 	<Header />
 		<slot />
