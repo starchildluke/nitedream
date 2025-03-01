@@ -138,7 +138,7 @@ td a {
     image-rendering: pixelated;
 }
 
-.home__img {
+.home__img, .blog__img {
     margin-bottom: var(--gap);
 }
 
