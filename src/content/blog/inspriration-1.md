@@ -5,7 +5,7 @@ pubDate: '01 Mar 2025'
 ---
 
 <div class="blog__img">
-	<img src="/images/nights-into-dreams.webp" width="750" height="1102" loading="eager"/>
+	<img src="/images/nights-into-dreams.webp" alt="the cover art for Nights into Dreams showing Nights playing their flute" width="750" height="1102" loading="eager"/>
 </div>
 
 [Nights into Dreams](https://en.wikipedia.org/wiki/Nights_into_Dreams) is a video game developed by Sonic Team and published by [Sega](https://distantarcade.co.uk/category/sega/) for the [Sega Saturn](https://distantarcade.co.uk/tag/sega-saturn/). Released in 1996, Nights tells the story of Elliot Edwards and Claris Sinclair, who enter a dream world called Nightopia. They travel through the world with the help of a character called Nights and stop the evil Wizeman and his tyrannical destruction of Nightopia.
