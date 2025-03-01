@@ -8,12 +8,12 @@ const parser = new MarkdownIt();
 export async function GET(context) {
   const posts = await getCollection('blog');
   const allPosts = posts.sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
   return rss({
     title: site.title,
     description: site.description,
-    site: 'https://pandog.media/',
+    site: 'https://nitedre.am/',
     items: allPosts.map((post) => ({
       link: `/blog/${post.slug}/`,
       content: sanitizeHtml(parser.render(post.body)),
